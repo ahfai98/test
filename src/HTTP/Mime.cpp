@@ -6,11 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:20:32 by jyap              #+#    #+#             */
-/*   Updated: 2024/12/25 20:48:54 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:10:50 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Mime.hpp"
+#include "../../inc/Mime.hpp"
 
 // Multipurpose Internet Mail Extensions
 // Maps file extensions to MIME types

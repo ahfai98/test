@@ -6,11 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 22:36:59 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/13 18:28:15 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:09:51 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/ServerManager.hpp"
+# include "../../inc/ServerManager.hpp"
 
 ServerManager::ServerManager(){}
 ServerManager::~ServerManager(){}

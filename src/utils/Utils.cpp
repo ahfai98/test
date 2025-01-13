@@ -6,11 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:11:53 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/13 18:32:46 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:11:34 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Webserv.hpp"
+#include "../../inc/Webserv.hpp"
 
 int ft_stoi(std::string str)
 {

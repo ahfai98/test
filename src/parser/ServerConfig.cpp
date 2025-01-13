@@ -6,11 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 20:24:55 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/13 18:33:46 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:54:21 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ServerConfig.hpp"
+#include "../../inc/ServerConfig.hpp"
 
 ServerConfig::ServerConfig()
 {
@@ -99,7 +99,7 @@ void ServerConfig::setLocationSetFlag(bool parameter)
 	this->location_flag = parameter;
 }
 
-void ServerConfig::setAutoIndexFlag(bool parameter)
+void ServerConfig::setAutoindexFlag(bool parameter)
 {
 	this->autoindex_flag = parameter;
 }
@@ -343,7 +343,7 @@ int ServerConfig::isValidLocation(Location &location) const
 			std::string tmp = *it;
 			if (tmp != ".py" && tmp != ".sh" && tmp != "*.py" && tmp != "*.sh")
 				return (1);
-			//set _ext_path[".py"] == "/usr/bin/python", do same for .sh
+			//set _ext_path[".py"] == "/usr/bin/python"
 			for (it_path = location.getCgiPath().begin(); it_path != location.getCgiPath().end(); ++it_path)
 			{
 				std::string tmp_path = *it_path;
@@ -359,9 +359,6 @@ int ServerConfig::isValidLocation(Location &location) const
 				}
 			}
 		}
-		// check number of cgi path and the number of cgiext-path map entries are the same
-		if (location.getCgiPath().size() != location.getExtensionPath().size())
-			return (1);
 	}
 	else
 	{
@@ -568,7 +565,7 @@ void ServerConfig::handleAutoIndex(size_t& i, Location& new_location, std::vecto
 		throw ErrorException("Autoindex of location is duplicated");
 	checkToken(parameter[++i]);
 	new_location.setAutoindex(parameter[i]);
-	new_location.setAutoIndexFlag(true);
+	new_location.setAutoindexFlag(true);
 }
 
 void ServerConfig::handleIndex(size_t& i, Location& new_location, std::vector<std::string>& parameter)

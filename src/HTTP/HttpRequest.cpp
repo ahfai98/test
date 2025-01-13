@@ -1,4 +1,4 @@
-#include "../inc/HttpRequest.hpp"
+#include "../../inc/HttpRequest.hpp"
 
 HttpRequest::HttpRequest()
 {

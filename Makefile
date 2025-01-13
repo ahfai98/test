@@ -6,7 +6,7 @@
 #    By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/15 20:51:19 by jyap              #+#    #+#              #
-#    Updated: 2025/01/13 18:31:29 by jyap             ###   ########.fr        #
+#    Updated: 2025/01/13 19:15:17 by jyap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,17 @@ OBJ_DIR = obj/
 INC_DIR = inc/
 
 SRC_FILES = main.cpp \
-			Utils.cpp \
-			ServerManager.cpp \
-			Response.cpp \
-			Client.cpp \
-			HttpRequest.cpp \
-			ConfigParser.cpp \
-			ServerConfig.cpp \
-			Location.cpp \
-			CgiHandler.cpp \
-			Mime.cpp \
-			Logger.cpp\
+			utils/Utils.cpp \
+			serverManager/ServerManager.cpp \
+			HTTP/Response.cpp \
+			HTTP/Client.cpp \
+			HTTP/HttpRequest.cpp \
+			parser/ConfigParser.cpp \
+			parser/ServerConfig.cpp \
+			parser/Location.cpp \
+			HTTP/CgiHandler.cpp \
+			HTTP/Mime.cpp \
+			logger/Logger.cpp\
 
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
@@ -55,7 +55,7 @@ $(NAME) : $(OBJ)
 	@echo $(BLACK)-webserv compiled.$(RESET)
 
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
 clean:

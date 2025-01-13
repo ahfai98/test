@@ -6,11 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 21:57:14 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/13 18:49:03 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:08:37 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/CgiHandler.hpp"
+#include "../../inc/CgiHandler.hpp"
 
 /* Constructor */
 CgiHandler::CgiHandler()

@@ -6,11 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:12:30 by jyap              #+#    #+#             */
-/*   Updated: 2024/12/27 14:35:08 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:46:33 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ConfigParser.hpp"
+#include "../../inc/ConfigParser.hpp"
 
 ConfigParser::ConfigParser()
 {
@@ -401,7 +401,7 @@ void ConfigParser::handleAutoIndex(size_t& i, ServerConfig& server, std::vector<
 	if (server.getAutoIndexFlag())
 		throw ErrorException("Autoindex of server is duplicated");
 	server.setAutoindex(parameter[++i]);
-	server.setAutoIndexFlag(true);
+	server.setAutoindexFlag(true);
 }
 
 void ConfigParser::handleErrorPage(size_t& i, ServerConfig& server, std::vector<std::string>& parameter)

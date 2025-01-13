@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 22:51:47 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/13 18:33:05 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:46:33 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ class ServerConfig
 		const bool &getLocationSetFlag() const;
 		const bool &getAutoIndexFlag() const;
 		const bool &getMaxSizeFlag() const;
-		void setAutoIndexFlag(bool parameter);
+		void setAutoindexFlag(bool parameter);
 		void setLocationSetFlag(bool parameter);
 		void setMaxSizeFlag(bool parameter);
 		

@@ -6,53 +6,39 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 19:47:29 by jyap              #+#    #+#             */
-/*   Updated: 2024/12/25 19:48:52 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/13 19:31:54 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Logger.hpp"
-
-pthread_mutex_t Logger::logMutex = PTHREAD_MUTEX_INITIALIZER;
+#include "../../inc/Logger.hpp"
 
 void	Logger::logMsg(const char *color, const char* msg, ...)
 {
 	char		output[8192];
 	va_list		args;
 	
-	va_start(args, msg);
-	// vsnprintf works like printf but more flexible
-	// Can take va_list as parameter and
-	// Get the output in a buffer instead of printing directly
-	// Safer with buffer overflow prevention and more efficient use of memory
+	va_start(args, msg); 
+	//vsnprintf(buffer, sizeof(buffer), msg, va_list)
+	// returns the number of characters written if there were no size elimit
 	int n = vsnprintf(output, sizeof(output), msg, args);
 	va_end(args);
 	// Check for buffer overflow
 	if (n < 0)
 	{
-		pthread_mutex_lock(&logMutex);
 		std::cerr << "Error: Failed to format log message." << std::endl;
-		pthread_mutex_unlock(&logMutex);
 		return;
 	}
-	std::string date = getCurrTime();
 	if (static_cast<size_t>(n) >= sizeof(output))
 	{
-		pthread_mutex_lock(&logMutex);
-		// Output was truncated
 		std::cerr << "Warning: Log message truncated due to buffer size." << std::endl;
-		pthread_mutex_unlock(&logMutex);
 	}
-	pthread_mutex_lock(&logMutex);
+	std::string date = getCurrTime();
 	std::cout << color << date << output << RESET << std::endl;
-	pthread_mutex_unlock(&logMutex);
 }
 
 std::string Logger::getCurrTime()
 {
 	char date[50];
-	// time(0) retrieves the current time as the number of
-	// seconds since the Unix epoch (January 1, 1970)
-	// time_t now represents the current time in seconds
 	time_t now = time(0);
 	// gmtime converts time_t value into a tm struct, and
 	// returns a pointer to this tm struct
