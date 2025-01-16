@@ -6,18 +6,15 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:12:30 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/13 19:46:33 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/15 10:16:39 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/ConfigParser.hpp"
 
-ConfigParser::ConfigParser()
-{
-	this->_nb_server = 0;
-}
+ConfigParser::ConfigParser(): _nb_server(0){}
 
-ConfigParser::~ConfigParser() {}
+ConfigParser::~ConfigParser(){}
 
 /* printing parameters of servers from config file */
 int ConfigParser::print()
@@ -57,8 +54,8 @@ int ConfigParser::print()
 			else
 			{
 				std::cout << "cgi root: " << itl->getRootLocation() << std::endl;
-				std::cout << "sgi_path: " << itl->getCgiPath().size() << std::endl;
-				std::cout << "sgi_ext: " << itl->getCgiExtension().size() << std::endl;
+				std::cout << "cgi_path: " << itl->getCgiPath().size() << std::endl;
+				std::cout << "cgi_ext: " << itl->getCgiExtension().size() << std::endl;
 			}
 			++itl;
 		}
@@ -68,7 +65,7 @@ int ConfigParser::print()
 	return (0);
 }
 
-/* checking and read config file, split servers to strings and creating vector of servers */
+/* check and read config file, split servers to strings and create vector of servers */
 int ConfigParser::createCluster(const std::string &config_file)
 {
 	std::string		content;

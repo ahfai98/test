@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 21:15:59 by jyap              #+#    #+#             */
-/*   Updated: 2024/12/25 19:30:49 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/15 10:16:51 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // terminate the server unexpectedly, leading to downtime.
 void handleSigpipe(int sig)
 { 
-	if(sig) {}
+	if(sig){}
 }
 
 std::string getConfigFilePath(int argc, char** argv)
